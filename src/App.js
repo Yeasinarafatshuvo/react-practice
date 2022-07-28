@@ -1,14 +1,14 @@
-import React from 'react';
-import './App.css';
-import Card from './Card';
-import Data from './data.json';
+import React from "react";
+import "./App.css";
+import Child from "./STATE_LIFTING/Child";
 function App() {
-  let items = [];
-  items = Data.map((item, index) => <Card key={index} titleText={item.title} description={item.desc}/>)
-    
+  const data = "I am from parents page";
+  const handleChildData = (data) => {
+    console.log(data);
+  };
   return (
-    <div className="App">
-        {items}
+    <div>
+      <Child data1={data} onchildData={handleChildData} />
     </div>
   );
 }
